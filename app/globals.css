@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-blush: #d4748a;
+  --color-sage: #7a9e8e;
+  --color-cream: #faf6f1;
+  --color-ink: #2d2d2d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: rgba(212, 116, 138, 0.25);
+  color: var(--color-ink);
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-content px-6 sm:px-8 lg:px-12;
+  }
+
+  .eyebrow {
+    @apply font-sans text-xs uppercase tracking-wider2 text-sage-dark;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full px-7 py-3 font-sans text-sm uppercase tracking-wider2 transition-all duration-300 ease-gentle;
+  }
+
+  .btn-primary {
+    @apply btn bg-blush text-white hover:bg-blush-dark hover:shadow-lg hover:shadow-blush/20;
+  }
+
+  .btn-outline {
+    @apply btn border border-ink/20 text-ink hover:border-ink hover:bg-ink hover:text-cream;
+  }
+
+  .btn-ghost {
+    @apply btn text-ink hover:text-blush;
+  }
+
+  .link-underline {
+    @apply relative inline-block transition-colors duration-300 ease-gentle after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-gentle hover:after:scale-x-100;
+  }
+
+  .section {
+    @apply py-20 sm:py-28 lg:py-32;
+  }
+
+  .h-display {
+    @apply font-display font-light leading-[1.05] tracking-tight;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
