@@ -25,14 +25,9 @@ export default function HomePage() {
               — at pop-ups, farmers markets, and the neighborhood spots you already love.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href="https://shop.thegardenca.com/store.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
-              >
+              <Link href="/shop" className="btn-primary">
                 Order a Bouquet
-              </a>
+              </Link>
               <Link href="/events" className="btn-outline">
                 See Upcoming Events
               </Link>
@@ -167,14 +162,9 @@ export default function HomePage() {
             Let us bring a little of the garden home with you.
           </h2>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <a
-              href="https://shop.thegardenca.com/store.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
+            <Link href="/shop" className="btn-primary">
               Shop Bouquets
-            </a>
+            </Link>
             <Link
               href="/contact"
               className="btn border border-cream/30 text-cream hover:bg-cream hover:text-ink"

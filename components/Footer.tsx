@@ -26,14 +26,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a
-                  href="https://shop.thegardenca.com/store.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-underline"
-                >
+                <Link href="/shop" className="link-underline">
                   Shop / Order
-                </a>
+                </Link>
               </li>
               <li>
                 <Link href="/events" className="link-underline">

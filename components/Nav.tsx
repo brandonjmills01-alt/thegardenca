@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
-  { href: 'https://shop.thegardenca.com/store.html', label: 'Shop / Order', external: true },
+  { href: '/shop', label: 'Shop / Order' },
   { href: '/events', label: 'Events' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
@@ -52,15 +52,11 @@ export default function Nav() {
 
         <nav className="hidden lg:flex items-center gap-10" aria-label="Primary">
           {NAV_LINKS.map((link) => {
-            const active = !link.external && pathname === link.href;
+            const active = pathname === link.href;
             const className = `font-sans text-xs uppercase tracking-wider2 link-underline ${
               active ? 'text-blush' : 'text-ink hover:text-blush'
             }`;
-            return link.external ? (
-              <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className={className}>
-                {link.label}
-              </a>
-            ) : (
+            return (
               <Link key={link.href} href={link.href} className={className}>
                 {link.label}
               </Link>
@@ -68,14 +64,12 @@ export default function Nav() {
           })}
         </nav>
 
-        <a
-          href="https://shop.thegardenca.com/store.html"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href="/shop"
           className="hidden lg:inline-flex btn-primary text-[11px] py-2.5 px-5"
         >
           Order a Bouquet
-        </a>
+        </Link>
 
         <button
           type="button"
@@ -110,28 +104,19 @@ export default function Nav() {
       >
         <nav className="container-x flex flex-col gap-1 pb-8 pt-2" aria-label="Mobile">
           {NAV_LINKS.map((link) => {
-            const active = !link.external && pathname === link.href;
+            const active = pathname === link.href;
             const className = `block py-4 font-display text-3xl font-light tracking-tight transition-colors ${
               active ? 'text-blush' : 'text-ink hover:text-blush'
             }`;
-            return link.external ? (
-              <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className={className}>
-                {link.label}
-              </a>
-            ) : (
+            return (
               <Link key={link.href} href={link.href} className={className}>
                 {link.label}
               </Link>
             );
           })}
-          <a
-            href="https://shop.thegardenca.com/store.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary mt-6 self-start"
-          >
+          <Link href="/shop" className="btn-primary mt-6 self-start">
             Order a Bouquet
-          </a>
+          </Link>
         </nav>
       </div>
     </header>
